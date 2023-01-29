@@ -4,7 +4,6 @@ import './Login.scss';
 const Login = () => {
     return (
         <>
-        {/* https://www.biolabinmunomedcorp.com/consultasweb/imagenes/logo.png */}
             <header className='header-login'>
                 <nav className='nav-login'>
                     <img src="https://www.biolabinmunomedcorp.com/consultasweb/imagenes/logo.png" alt="Biolab Logo" />
