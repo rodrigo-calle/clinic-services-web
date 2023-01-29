@@ -1,8 +1,8 @@
 import * as React from 'react';
-import AlphabeticSearch from '../components/alphabeticSearch/AlphabeticSearch';
-import HeaderTable from '../components/headerTable/HeaderTable';
-import MainNavbar from '../components/navbar/MainNavbar';
-import ServiceTable from '../components/serviceTable/ServiceTable';
+import AlphabeticSearch from '../../components/alphabeticSearch/AlphabeticSearch';
+import HeaderTable from '../../components/headerTable/HeaderTable';
+import MainNavbar from '../../components/navbar/MainNavbar';
+import ServiceTable from '../../components/serviceTable/ServiceTable';
 import './index.scss';
 
 const Index = () => {
