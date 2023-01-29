@@ -1,0 +1,33 @@
+.alphabet-container-input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    .letter-container {
+        border-radius: 7px;
+        border: 2px solid #2aa7df;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        .letter-container-text {
+            font-weight: 600;
+            color: #2aa7df;
+            text-align: center;
+            padding: 0;
+            width: fit-content;
+        }
+        &:hover {
+            color: #fff;
+            background-color: #2aa6df3b;
+        }
+    
+    }
+
+}

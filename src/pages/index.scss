@@ -1,0 +1,87 @@
+header {
+    width: 100%;
+}
+main {
+    .header-table {
+        width:80%;
+        height: fit-content;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+    .table-body-container {
+        width: 90%;
+        height: fit-content;
+        margin: 0 auto;    
+
+        .secondary-title {
+            font-size: 25px;
+            width: 75%;
+            margin: 20px auto;
+        }
+        .search-container {
+            width: 70%;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+            background-color: #fff;
+            border: 5px solid #2aa6df28;
+            border-radius: 10px;
+
+            .input-title {
+                font-size: 20px;
+            }
+            .text-search-input {
+                width: 100%;
+                border-radius: 7px;
+                border: thin solid #2aa7df;
+                padding: 3px;
+                height: 40px;
+                font-size: 20px;
+                font-weight: 400;
+            }
+        }
+        .alphabetical-search-main-container {
+            width: 70%;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+            background-color: #fff;
+            border: 5px solid #2aa6df28;
+            border-radius: 10px;
+            .alphabetical-search-title-container {
+                display: flex;
+                flex-direction: column;
+                .input-title {
+                    font-size: 20px;
+                }
+                button {
+                    border-radius: 7px;
+                    border: 2px solid #2aa7df;
+                    height: 50px;
+                    width: 80%;
+                    background-color: #fff;
+                    color: #2aa7df;
+                    font-weight: 400;
+                    font-size: 18px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #2aa6df3b;
+                    }
+                }
+            
+            }
+        }
+    }
+
+    .result-table {
+        width: 80%;   
+        margin: 20px auto;
+    }
+    
+}
