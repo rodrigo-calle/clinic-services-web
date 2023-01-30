@@ -5,9 +5,11 @@ import Index from './pages/index'
 import Login from './pages/login/Login'
 
 function App() {
+  console.log('testing')
   return (
     <BrowserRouter>
         <Routes>
+          <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
           <Route path='/service-list' element={<Index /> } />
         </Routes>
