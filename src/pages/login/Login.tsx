@@ -1,16 +1,60 @@
 import * as React from 'react';
 import './Login.scss';
+import clientService from '../../services/auth'
+import { LoginType } from '../../types/types';
+import { Link, useNavigate } from 'react-router-dom';
 
+type responseClientType = {
+    NomCom: string;
+    NroRuc: string;
+}
 const Login = () => {
+    // console.log(process.env)
+    const navigate = useNavigate()
+    const [loginData, setLoginData] = React.useState<LoginType>({
+        ruc: '',
+        password: ''
+    })
+
+    const setInput = (e: any) => {
+        const {name, value} = e.target;
+        setLoginData((prev) => ({
+            ...prev,
+            [name]: value
+
+        }))
+    }
+    const login = async (data: LoginType): Promise<any> => {
+        const response = await clientService.login(data);
+        const responseParsed = await response.json()
+        const userData = responseParsed[0] as responseClientType
+        if(response.status === 200) {
+            localStorage.setItem("biolabUser", JSON.stringify({
+                NomCom: userData.NomCom,
+                NroRuc: userData.NroRuc,
+            }))
+
+            navigate('/service-list')
+        } else {            
+            alert("Credenciales Incorrectas, Inténtelo Nuevamente")
+            setLoginData({
+                ruc: '',
+                password: ''
+            })
+        }
+    }
     return (
         <>
             <header className='header-login'>
                 <nav className='nav-login'>
                     <img src="https://www.biolabinmunomedcorp.com/consultasweb/imagenes/logo.png" alt="Biolab Logo" />
-                    <button>
-                        <img src="https://icongr.am/fontawesome/angle-left.svg?size=128&color=ffffff" alt="left row" />
-                        <p>Volver</p>
-                    </button>
+                    <Link to="/" className='back-link'>
+                        <button>
+                            <img src="https://icongr.am/fontawesome/angle-left.svg?size=128&color=ffffff" alt="left row" />
+                            <p>Volver</p>
+                        </button>
+                    </Link>
+
                 </nav>
             </header>
             <div className='login-container'>
@@ -22,7 +66,7 @@ const Login = () => {
                 </div>
                 <div className='form-container-login'>
                     <h2>Resultados</h2>
-                    <form action="">
+                
                         <label htmlFor="ruc">
                             Usuario
                         </label>
@@ -30,6 +74,9 @@ const Login = () => {
                         <input 
                             type="text"
                             name='ruc'
+                            required
+                            value={loginData.ruc}
+                            onChange={setInput}
                         />
                         <br />
                         <label htmlFor="password">
@@ -39,16 +86,19 @@ const Login = () => {
                         <input 
                             type="password"
                             name='password'
+                            required
+                            value={loginData.password}
+                            onChange={setInput}
                         />
                         <br />
-                        <button className='submit-login-button'>
+                        <button type='submit' className='submit-login-button' onClick={() => login(loginData)}>
                             Ingresar
                         </button>
                         <br />
                         <p className='last-text'>
                             Biolab & Inmunomed © 2022 | Todos los derechos reservados.
                         </p>
-                    </form>
+                    
                 </div>
 
             </div>

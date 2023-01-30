@@ -7,7 +7,7 @@ const AlphabeticSearch = () => {
         <div className='alphabet-container-input'>            
             {AlphabetList.map((letter): any => {
                 return (
-                    <div className='letter-container'>
+                    <div className='letter-container' key={letter}>
                         <p className='letter-container-text'>
                             {letter.toUpperCase()}                        
                         </p>                    

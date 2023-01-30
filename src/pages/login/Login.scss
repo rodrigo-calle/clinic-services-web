@@ -21,23 +21,25 @@
             width: 407px;
             height: 100px;
         }
-
-        button {
-            background-color: #0f4c83;
-            border: none;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            p {
-                font-size: 30px;
-                color: #fff;
-            }
-    
-            img {
-                height: 83px;
-                width: 83px;
+        .back-link {
+            text-decoration: none;
+            button {
+                background-color: #0f4c83;
+                border: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                p {
+                    font-size: 30px;
+                    color: #fff;
+                }
+        
+                img {
+                    height: 83px;
+                    width: 83px;
+                }
             }
         }
     }
